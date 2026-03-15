@@ -1,43 +1,43 @@
 const services = [
   {
-    num: '06',
-    name: 'שיקום מלא',
-    desc: 'תוכנית טיפול מקיפה לשיקום הפה כולו. תכנון דיגיטלי, תוצאה מושלמת.',
-    tag: 'פתרון מקיף',
-    big: true,
-    style: { gridColumn: '1', gridRow: '1 / 3' },
-  },
-  {
-    num: '02',
-    name: 'אסטטיקה דנטלית',
-    desc: 'ציפויי חרסינה, הלבנה מקצועית, חיוך הוליוודי. תוצאות שמשנות חיים.',
-    style: { gridColumn: '2', gridRow: '1' },
-  },
-  {
     num: '01',
     name: 'השתלות שיניים',
     desc: 'תכנון דיגיטלי מלא, שיקום מיידי ביום אחד. שתלים איכותיים, תוצאות לכל החיים.',
     tag: 'הנפוץ ביותר',
     big: true,
-    style: { gridColumn: '3', gridRow: '1 / 3' },
+    desktopStyle: { gridColumn: '3', gridRow: '1 / 3' },
+  },
+  {
+    num: '02',
+    name: 'אסטטיקה דנטלית',
+    desc: 'ציפויי חרסינה, הלבנה מקצועית, חיוך הוליוודי. תוצאות שמשנות חיים.',
+    desktopStyle: { gridColumn: '2', gridRow: '1' },
   },
   {
     num: '03',
     name: 'יישור שיניים',
     desc: 'Diamond Provider רשמי. Invisalign לכל הגילאים, תוצאות מדהימות.',
-    style: { gridColumn: '2', gridRow: '2' },
-  },
-  {
-    num: '05',
-    name: 'טיפול ילדים',
-    desc: 'סביבה ידידותית, צוות מיומן בטיפול בחרדות. הרגלים נכונים מגיל צעיר.',
-    style: { gridColumn: '2', gridRow: '3' },
+    desktopStyle: { gridColumn: '2', gridRow: '2' },
   },
   {
     num: '04',
     name: 'טיפולי שורש',
     desc: 'אנדודונטיה תחת מיקרוסקופ דנטלי. דיוק מירבי, ללא כאב.',
-    style: { gridColumn: '3', gridRow: '3' },
+    desktopStyle: { gridColumn: '3', gridRow: '3' },
+  },
+  {
+    num: '05',
+    name: 'טיפול ילדים',
+    desc: 'סביבה ידידותית, צוות מיומן בטיפול בחרדות. הרגלים נכונים מגיל צעיר.',
+    desktopStyle: { gridColumn: '2', gridRow: '3' },
+  },
+  {
+    num: '06',
+    name: 'שיקום מלא',
+    desc: 'תוכנית טיפול מקיפה לשיקום הפה כולו. תכנון דיגיטלי, תוצאה מושלמת.',
+    tag: 'פתרון מקיף',
+    big: true,
+    desktopStyle: { gridColumn: '1', gridRow: '1 / 3' },
   },
 ];
 
@@ -60,7 +60,7 @@ export default function Services() {
           <div
             className={`svc-card${s.big ? ' big' : ''}`}
             key={s.num}
-            style={s.style}
+            style={s.desktopStyle}
           >
             <span className="svc-watermark">{s.num}</span>
             <span className="svc-num">{s.num}</span>

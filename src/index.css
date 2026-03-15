@@ -900,3 +900,187 @@ footer {
 .fade-up-2 { animation-delay: 0.25s; opacity: 0; }
 .fade-up-3 { animation-delay: 0.4s; opacity: 0; }
 .fade-up-4 { animation-delay: 0.55s; opacity: 0; }
+
+/* ═══ HAMBURGER TOGGLE ═══ */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 101;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle.active span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-toggle.active span:nth-child(2) { opacity: 0; }
+.nav-toggle.active span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* ═══ RESPONSIVE — TABLET (≤1024px) ═══ */
+@media (max-width: 1024px) {
+  nav { padding: 16px 32px; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    position: fixed;
+    inset: 0;
+    background: rgba(247,249,251,0.97);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .nav-links a { font-size: 1rem; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .hero-left { padding: 60px 32px; }
+
+  .hero-title { font-size: 3.4rem; }
+
+  .hero-right { height: 50vh; }
+
+  .hero-badge { bottom: 20px; right: 20px; }
+
+  .trust-bar {
+    padding: 18px 24px;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .services { padding: 80px 32px; }
+
+  .services-bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .services-bento .svc-card,
+  .services-bento .svc-empty { grid-column: auto !important; grid-row: auto !important; }
+  .services-bento .svc-empty { display: none; }
+  .svc-card.big { min-height: 260px; }
+
+  .gallery-inner { padding: 0 32px; }
+  .gallery-scroll {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 32px;
+  }
+
+  .team { padding: 80px 32px; }
+  .team-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .testimonials { padding: 80px 32px; }
+  .reviews-grid { grid-template-columns: 1fr 1fr; }
+
+  .booking {
+    padding: 80px 32px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .booking-copy h2 { font-size: 2.6rem; }
+
+  footer { padding: 40px 32px 24px; }
+
+  .section-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .section-title { font-size: 2.4rem; }
+}
+
+/* ═══ RESPONSIVE — MOBILE (≤600px) ═══ */
+@media (max-width: 600px) {
+  nav { padding: 14px 20px; }
+
+  .hero-left { padding: 40px 20px; }
+
+  .hero-title { font-size: 2.6rem; }
+
+  .hero-subtitle { max-width: 100%; font-size: 0.85rem; margin-bottom: 32px; }
+
+  .hero-actions { flex-direction: column; align-items: stretch; gap: 16px; }
+  .btn-dark { text-align: center; }
+  .btn-ghost { justify-content: center; }
+
+  .hero-stats { gap: 24px; margin-top: 40px; }
+  .stat-num { font-size: 1.8rem; }
+
+  .hero-right { height: 40vh; }
+
+  .hero-badge {
+    bottom: 12px;
+    right: 12px;
+    left: 12px;
+    padding: 12px 14px;
+  }
+
+  .trust-bar {
+    padding: 16px 20px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .trust-item { font-size: 0.68rem; }
+
+  .services { padding: 60px 20px; }
+
+  .services-bento { grid-template-columns: 1fr; }
+  .svc-card { padding: 32px 24px 36px; }
+  .svc-card.big { min-height: auto; }
+  .svc-watermark { font-size: 5rem; }
+
+  .section-header { margin-bottom: 40px; }
+  .section-title { font-size: 2rem; }
+
+  .gallery { padding: 60px 0; }
+  .gallery-inner { padding: 0 20px; margin-bottom: 32px; }
+  .gallery-scroll {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 20px;
+  }
+
+  .team { padding: 60px 20px; }
+  .team-grid { gap: 32px; margin-top: 40px; }
+  .team-copy h3 { font-size: 1.6rem; }
+  .doctors-row { grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  .testimonials { padding: 60px 20px; }
+  .reviews-grid { grid-template-columns: 1fr; margin-top: 40px; }
+  .review-card { padding: 32px 24px; }
+
+  .booking { padding: 60px 20px; gap: 32px; }
+  .booking-copy h2 { font-size: 2rem; }
+  .booking-form { padding: 28px 20px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  footer { padding: 32px 20px 20px; }
+  .footer-top { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+}
